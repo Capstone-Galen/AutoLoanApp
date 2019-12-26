@@ -1,6 +1,7 @@
 from decimal import *
 # Auto Loan Calculator console representation
 # Created by Galen Schatzman 12/26/2019
+#Now added to repository at https://github.com/SchatzmanGPS/ConsoleLoanApp.git
 g = input("Enter the amount in dollars you would like to borrow from the bank : ")
 g = Decimal(g)
 h = input("Enter the loan interest rate (i.e. 4.49): ")
