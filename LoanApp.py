@@ -1,9 +1,17 @@
+print("Python code starting.")
+print("This application developed in Python by Galen Schatzman.")
 from tkinter import *
 from tkinter import messagebox
 from decimal import *
 
+
 HEIGHT=350
 WIDTH=360
+
+root = Tk()
+root.title("Auto Loan Calculator")
+root.iconbitmap = (r'.\icons8carbadge.ico')
+#Car Badge icon by Icons8
 
 def calculate(entryLA, entryIR, entryLT):
 
@@ -33,6 +41,9 @@ def calculate(entryLA, entryIR, entryLT):
         monthly = (totalCost / monthCalc)
         m = round(monthly, 2)
 
+        #Below line prevents users from using decimal format loan term in years and getting back decimal formatted months of loan term
+        monthCalc = round(monthCalc, 0)
+
         #Convert above decimal values to strings in order to print below
         tc = str(tc)
         ic = str(ic)
@@ -48,12 +59,9 @@ def calculate(entryLA, entryIR, entryLT):
         labelmc['text'] = "Minimum Monthly Payment: $" + m
         labelm['text'] = "You will pay this loan off in " + monthCalc + " months"
     except:
-        messagebox.showwarning("", "Please Enter Numbers and Number Formats only.")
+        messagebox.showwarning("Auto Loan Calculator", "Please Enter Numbers and Number Formats only.")
         
-root = Tk()
-root.title("Auto Loan Calculator")
-root.iconbitmap(r'c:\Python\Capstone\icons8carbadge.ico')
-#Car Badge icon by Icons8
+
 
 
 canvas = Canvas(root, height=HEIGHT, width=WIDTH)
