@@ -88,8 +88,8 @@ labelLT.place(x = 88, y = 105)
 entryLT = Entry(frame, justify='center')
 entryLT.place(x = 120, y = 130)
 
-#calcButton = Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
-calcButton = Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+calcButton = Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+#alcButton = Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
 calcButton.place(x = 138, y = 155)
 
 labelar = Label(frame, bg="#B2ACAC")
