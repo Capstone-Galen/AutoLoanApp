@@ -15,7 +15,7 @@ root.iconbitmap = (r'.\icons8carbadge.ico')
 
 def calculate(entryLA, entryIR, entryLT):
 
-    print("Calculate Button Pressed " + entryLA + " " + entryIR + " " + entryLT)
+    #print("Calculate Button Pressed " + entryLA + " " + entryIR + " " + entryLT)
 
     try:
     #Convert String Value to Decimal Below
