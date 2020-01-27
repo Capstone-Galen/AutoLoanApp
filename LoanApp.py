@@ -1,5 +1,5 @@
-print("Python code starting.")
-print("This application developed in Python by Galen Schatzman.")
+#print("Python code starting.")
+#print("This application developed in Python by Galen Schatzman.")
 from tkinter import *
 from tkinter import messagebox
 from decimal import *
@@ -10,7 +10,7 @@ WIDTH=360
 
 root = Tk()
 root.title("Auto Loan Calculator")
-root.iconbitmap = (r'.\icons8carbadge.ico')
+#root.iconbitmap = (r'.\icons8carbadge.ico')
 #Car Badge icon by Icons8
 
 def calculate(entryLA, entryIR, entryLT):
