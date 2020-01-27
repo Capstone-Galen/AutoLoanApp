@@ -6,7 +6,7 @@ pipeline {
     }
       steps {
         echo 'Initial Pipeline started. Building with Pyinstaller'
-        sh 'pyinstaller --onefile -w icon=icons8carbadge.ico LoanApp.py'
+        sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
       }
       post{
         success{
