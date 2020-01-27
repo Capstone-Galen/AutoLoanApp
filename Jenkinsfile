@@ -1,10 +1,8 @@
 pipeline {
-  agent none {
+  agent docker {image 'cdrx/pyinstaller-windows:python3'}
   stages {
     stage('Build Distributable') {
-      docker {
-      image 'cdrx/pyinstaller-windows:python3'
-      }
+      
     }
       steps {
         echo 'Initial Pipeline started. Building with Pyinstaller'
@@ -17,5 +15,4 @@ pipeline {
 
   }
 }
-  } 
-}
+  }
