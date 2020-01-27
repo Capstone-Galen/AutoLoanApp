@@ -6,10 +6,14 @@ pipeline {
 
   }
   stages {
-    stage('Initial pipeline') {
+    stage('Build Distributable') {
       steps {
-        echo 'Initial Pipeline created'
+        echo 'Initial Pipeline started. Building with Pyinstaller'
+        sh 'pyinstaller --onefile -w icon=icons8carbadge.ico LoanApp.py'
       }
+      post{
+        success{
+          archiveArtifacts 'dist/LoanApp'
     }
 
   }
