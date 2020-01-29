@@ -14,14 +14,15 @@ pipeline {
     }
 
     stage('Build Executable') {
+      agent {
+        docker {
+          image 'cdrx/pyinstaller-windows'
+        }
+
+      }
       steps {
         sh 'pyinstaller LoanApp.py'
-      }
-    }
-
-    stage('Clean Workspace on complete') {
-      steps {
-        cleanWs(cleanWhenFailure: true, cleanWhenAborted: true, cleanWhenNotBuilt: true)
+        catchError()
       }
     }
 
