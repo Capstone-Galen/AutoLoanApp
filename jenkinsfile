@@ -1,0 +1,22 @@
+pipeline {
+    agent none
+    options {
+        skipStagesAfterUnstable()
+    }
+    stage('Produce Build') { 
+            agent {
+                docker {
+                    image 'cdrx/pyinstaller-windows:python3'
+                }
+            }
+            steps {
+                sh 'pyinstaller --onefile LoanApp.py'
+            }
+            post {
+                success {
+                    archiveArtifacts 'dist/LoanApp.exe'
+                }
+            }
+        }
+    }
+}
