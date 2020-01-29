@@ -9,6 +9,7 @@ pipeline {
     stage('Retrieve Repository') {
       steps {
         git(url: 'https://github.com/Capstone-Galen/AutoLoanApp', branch: 'master')
+        echo 'https://github.com/Capstone-Galen/AutoLoanApp reached'
       }
     }
 
