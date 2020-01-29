@@ -1,7 +1,7 @@
 pipeline {
   agent {
     docker {
-      image 'cdrx/pyinstaller-windows:python3'
+      image 'cdrx/pyinstaller-windows'
     }
 
   }
