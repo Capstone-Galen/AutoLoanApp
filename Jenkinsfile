@@ -19,5 +19,11 @@ pipeline {
       }
     }
 
+    stage('Clean Workspace on complete') {
+      steps {
+        cleanWs(cleanWhenFailure: true, cleanWhenAborted: true, cleanWhenNotBuilt: true)
+      }
+    }
+
   }
 }
