@@ -1,5 +1,5 @@
-print("Python code starting.")
-print("This application developed in Python by Galen Schatzman.")
+#print("Python code starting.")
+#print("This application developed in Python by Galen Schatzman.")
 from tkinter import *
 from tkinter import messagebox
 from decimal import *
@@ -10,7 +10,7 @@ WIDTH=360
 
 root = Tk()
 root.title("Auto Loan Calculator")
-root.iconbitmap = (r'.\icons8carbadge.ico')
+#root.iconbitmap = (r'.\icons8carbadge.ico')
 #Car Badge icon by Icons8
 
 def calculate(entryLA, entryIR, entryLT):
@@ -88,8 +88,8 @@ labelLT.place(x = 88, y = 105)
 entryLT = Entry(frame, justify='center')
 entryLT.place(x = 120, y = 130)
 
-calcButton = Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
-#alcButton = Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+#calcButton = Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+calcButton = Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
 calcButton.place(x = 138, y = 155)
 
 labelar = Label(frame, bg="#B2ACAC")
