@@ -22,7 +22,6 @@ pipeline {
       }
       steps {
         sh 'pyinstaller LoanApp.py'
-        catchError()
       }
     }
 
