@@ -6,9 +6,15 @@ pipeline {
 
   }
   stages {
-    stage('Produce Build') {
+    stage('Retrieve Repository') {
       steps {
-        sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
+        git(url: 'https://github.com/Capstone-Galen/AutoLoanApp', branch: 'master')
+      }
+    }
+
+    stage('Build Executable') {
+      steps {
+        sh 'pyinstaller LoanApp.py'
       }
     }
 
