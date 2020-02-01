@@ -10,8 +10,6 @@ pipeline {
         }
         stage('Prepare Workspace') {
             steps{
-                ws('~/Capstone/AutoLoanApp/src')
-                sh 'echo "Did it"'
                 sh 'echo pwd “    $(pwd):/src/”'
             }
         }
