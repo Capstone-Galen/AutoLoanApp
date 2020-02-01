@@ -1,6 +1,5 @@
 pipeline {
     agent any
-    ws('~/Capstone/AutoLoanApp/src')
     stages {
 
         stage('Show Python Version'){
@@ -19,6 +18,7 @@ pipeline {
             agent {docker{image 'cdrx/pyinstaller'}}
             
                 steps{
+                    ws('~/Capstone/AutoLoanApp/src')
                     sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
 
                 }
