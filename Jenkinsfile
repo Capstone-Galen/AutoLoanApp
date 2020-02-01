@@ -10,7 +10,7 @@ pipeline {
         }
         stage('Prepare Workspace') {
             steps{
-                ws('/var/jenkins_home/workspace/AutoLoanCalculator@~/Capstone/AutoLoanApp/src')
+                ws('~/Capstone/AutoLoanApp/src')
                 sh 'echo "Did it"'
                 sh 'echo pwd “$(pwd):/src/”'
             }
