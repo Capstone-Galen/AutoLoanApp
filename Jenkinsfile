@@ -14,7 +14,7 @@ pipeline {
                 none
             }
             steps {
-                sh'docker run -d cdrx/pyinstaller-windows sleep 120'
+                sh 'docker run -d cdrx/pyinstaller-windows sleep 120'
                 sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
             }
             post {
