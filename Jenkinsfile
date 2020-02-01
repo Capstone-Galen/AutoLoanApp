@@ -1,5 +1,5 @@
 pipeline {
-    
+    agent any
     stages {
 
         stage('Show Python Version'){
@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Produce Build'){
-            agent { docker {}}
+            agent {any}
             
                 steps{
                     sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
