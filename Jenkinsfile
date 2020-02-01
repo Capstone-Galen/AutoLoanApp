@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Produce Build'){
-            agent {docker{image 'cdrx/pyinstaller-windows'}}
+            agent {none}
             
                 steps{
                     ws('~/Capstone/AutoLoanApp/src')
