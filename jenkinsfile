@@ -3,16 +3,20 @@ pipeline {
     options {
         skipStagesAfterUnstable()
     }
+    stage('Prepare') {
+        steps {
+            ws('/var/jenkins_home/workspace/AutoLoanCalculator@~/Capstone/AutLoanApp/src')
+            sh 'echo pwd'
+        }
+    }
     stage('Produce Build') { 
             agent {
                 docker {
-                    image 'cdrx/pyinstaller-windows:python3'
+                    image 'cdrx/pyinstaller-windows'
                 }
             }
             steps {
-                sh'pwd'
-                sh 'echo pwd'
-                sh 'pyinstaller --onefile LoanApp.py'
+                sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
             }
             post {
                 success {
