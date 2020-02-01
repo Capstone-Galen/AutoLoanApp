@@ -1,5 +1,4 @@
 pipeline {
-    agent none
     
     stages {
 
@@ -16,7 +15,7 @@ pipeline {
             }
         }
         stage('Produce Build'){
-            agent { docker {}
+            agent { docker {}}
             
                 steps{
                 sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
@@ -27,7 +26,7 @@ pipeline {
                         archiveArtifacts 'dist/LoanApp.exe'
                     }
                 }
-            }
+            
         }
     }
 }
