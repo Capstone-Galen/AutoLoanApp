@@ -1,29 +1,26 @@
 pipeline {
-  agent {
-    docker {
-      image 'cdrx/pyinstaller-windows'
+    agent none
+    options {
+        skipStagesAfterUnstable()
     }
-
-  }
-  stages {
-    stage('Retrieve Repository') {
-      steps {
-        git(url: 'https://github.com/Capstone-Galen/AutoLoanApp', branch: 'master')
-        echo 'https://github.com/Capstone-Galen/AutoLoanApp reached'
-      }
-    }
-
-    stage('Build Executable') {
-      agent {
-        docker {
-          image 'cdrx/pyinstaller-windows'
+    stage('Prepare') {
+        steps {
+            ws('/var/jenkins_home/workspace/AutoLoanCalculator@~/Capstone/AutLoanApp/src')
+            sh 'echo pwd'
         }
-
-      }
-      steps {
-        sh 'pyinstaller LoanApp.py'
-      }
     }
-
-  }
+    stage('Produce Build') { 
+            agent {
+                any
+            }
+            steps {
+                sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
+            }
+            post {
+                success {
+                    archiveArtifacts 'dist/LoanApp.exe'
+                }
+            }
+        }
+    }
 }
