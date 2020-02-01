@@ -11,7 +11,7 @@ pipeline {
     }
     stage('Produce Build') { 
             agent {
-                any
+                none
             }
             steps {
                 sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
