@@ -15,7 +15,7 @@ pipeline {
             }
         }
         stage('Produce Build'){
-            agent {any}
+            agent {docker{image 'cdrx/pyinstaller'}}
             
                 steps{
                     sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
