@@ -18,15 +18,14 @@ pipeline {
             agent { docker {}}
             
                 steps{
-                sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
+                    sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
 
                 }
                 post {
                     success {
                         archiveArtifacts 'dist/LoanApp.exe'
                     }
-                }
-            
+                }  
         }
     }
 }
