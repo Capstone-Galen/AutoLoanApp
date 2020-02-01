@@ -15,9 +15,8 @@ pipeline {
                 sh 'echo pwd “$(pwd):/src/”'
             }
         }
-
         stage('Produce Build'){
-            agent { docker 
+            agent { docker {}
             
                 steps{
                 sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
