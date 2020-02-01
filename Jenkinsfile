@@ -10,17 +10,18 @@ pipeline {
         }
         stage('Prepare Workspace') {
             steps{
+                ws('~/Capstone/AutoLoanApp/src')
                 sh 'echo "Did it"'
-                sh 'echo pwd “$(pwd):/src/”'
+                sh 'echo pwd “    $(pwd):/src/”'
             }
         }
         stage('Produce Build'){
-            agent {none}
+            agent {docker{image 'python:3.5.1'}}
             
                 steps{
                     ws('~/Capstone/AutoLoanApp/src')
+                    sh 'pwd'
                     sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
-
                 }
                 post {
                     success {
