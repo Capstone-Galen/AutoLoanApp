@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    customWorkspace '~/Capstone/AutoLoanApp/src'
+    ws('~/Capstone/AutoLoanApp/src')
     stages {
 
         stage('Show Python Version'){
