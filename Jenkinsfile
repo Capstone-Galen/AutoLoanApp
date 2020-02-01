@@ -17,7 +17,6 @@ pipeline {
             agent {docker{image 'python:3.5.1'}}
             
                 steps{
-                    ws('~/Capstone/AutoLoanApp/src')
                     sh 'pwd'
                     sh 'pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py'
                 }
