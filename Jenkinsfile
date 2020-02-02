@@ -13,12 +13,6 @@ pipeline {
       }
     }
 
-    stage('Prepare Workspace') {
-      steps {
-        sh 'echo "Python is prepared on host machine."'
-      }
-    }
-
     stage('Produce Build') {
       agent {
         dockerfile {
