@@ -1,10 +1,5 @@
 pipeline {
-  agent {
-    dockerfile {
-      filename 'Dockerfile'
-    }
-
-  }
+  agent none
   stages {
     stage('Show Python Version') {
       agent {
@@ -26,8 +21,8 @@ pipeline {
 
     stage('Produce Build') {
       agent {
-        docker {
-          image 'python:3.5.1'
+        dockerfile {
+          filename 'Dockerfile'
         }
 
       }
