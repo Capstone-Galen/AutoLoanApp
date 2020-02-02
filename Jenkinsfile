@@ -1,35 +1,10 @@
-pipeline {
-  agent none
-  stages {
-    stage('Show Python Version') {
-      agent {
-        docker {
-          image 'python:3.5.1'
-        }
+node {
+    checkout scm
 
-      }
-      steps {
-        sh 'python --version'
-      }
+    docker.withRegistry('https://https://registry.hub.docker.com/', 'dockerhub') {
+
+        def customImage = docker.build("gschatzman/autoloancalculatorlinux:${env.BUILD_ID}")
+
+        /* Push the container to the custom Registry */
+        customImage.push()
     }
-
-    stage('Produce Build') {
-      agent {
-        dockerfile {
-          filename 'Dockerfile'
-        }
-
-      }
-      post {
-        success {
-          archiveArtifacts 'dist/LoanApp.exe'
-        }
-
-      }
-      steps {
-        sh 'docker build -t loanappjenkinspipeline .'
-      }
-    }
-
-  }
-}
