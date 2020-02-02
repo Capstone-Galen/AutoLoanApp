@@ -1,5 +1,5 @@
 FROM cdrx/pyinstaller-windows
-ADD LoanApp.py /
-RUN pyinstaller
-CMD [ "--onefile --windowed --icon=icons8carbadge.ico LoanApp.py"]
-
+COPY . /LoanApp.py
+WORKDIR /LoanApp.py
+RUN pip install pyinstaller
+CMD pyinstaller --onefile --windowed --icon-icons8carbadge.ico LoanApp.py
