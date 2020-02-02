@@ -1,7 +1,11 @@
 pipeline {
-    agent{any}
+    agent{none}
     stages {
         stage('Push to DockerHub'){
+            agent{dockerfile {
+                filename 'Dockerfile'
+            }
+        }
             steps{
                 checkout scm
 
