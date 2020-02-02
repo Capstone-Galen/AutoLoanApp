@@ -15,7 +15,7 @@ pipeline {
 
     stage('Prepare Workspace') {
       steps {
-        sh 'echo pwd “    $(pwd):/src/”'
+        sh 'echo "Python is prepared on host machine."'
       }
     }
 
