@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent {none}
         stage('Push to Docker Hub'){
             steps{
                 checkout scm
@@ -10,6 +10,6 @@ pipeline {
 
                 /* Push the container to the custom Registry */
                 customImage.push()
-                }
+            }
         }
-    }
+}
