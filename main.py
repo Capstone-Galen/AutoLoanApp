@@ -2,15 +2,22 @@ import decimal as dc
 # Auto Loan Calculator console representation
 # Created by Galen Schatzman 12/26/2019
 #Now added to repository at https://github.com/SchatzmanGPS/ConsoleLoanApp.git
-g = input("Enter the amount in dollars you would like to borrow from the bank : ")
+print("")
+print("*************************************************************************")
+print("*************************************************************************")
+print("************** AUTO LOAN CALCULATOR CONSOLE APPLICATION *****************")
+print("*************************************************************************")
+print("*************************************************************************")
+print("")
+g = input("Enter the amount in dollars you would like to borrow from the bank: ")
 g = dc.Decimal(g)
 h = input("Enter the loan interest rate (i.e. 4.49): ")
 h = dc.Decimal(h)
-i = input("Enter the term of your loan in years : ")
+i = input("Enter the term of your loan in years: ")
 i = dc.Decimal(i)
+
 print("Calculating...")
 print("")
-
 interestRate = (h / 100)
 interestRate = dc.Decimal(interestRate)
 monthCalc = (i * 12)
@@ -41,4 +48,5 @@ print("Your minimum monthly payment will be: $" + m)
 print("")
 print("You will be paying the above amount for " + monthCalc + " months.")
 print("")
+
 
