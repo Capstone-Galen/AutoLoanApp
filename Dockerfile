@@ -1,4 +1,4 @@
-FROM cdrx/pyinstaller-windows
+FROM cdrx/pyinstaller-linux
 COPY . /LoanApp.py
 COPY . /icons8carbadge.ico
 WORKDIR /LoanApp.py
