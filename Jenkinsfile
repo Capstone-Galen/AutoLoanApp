@@ -5,7 +5,6 @@ node {
         def customImage = docker.build("gschatzman/alc-windows:1.${env.BUILD_ID}", "-f ${dockerfile} .")
         def dfile = 'Dockerfile'
         def linuxImage = docker.build("gschatzman/alc-linux:1.${env.BUILD_ID}", "-f ${dfile} .")
-
         customImage.push()
         linuxImage.push()
     }
