@@ -2,4 +2,4 @@ FROM cdrx/pyinstaller-linux:python3
 COPY . /main.py /Main.py/src/
 WORKDIR /Main.py/src/
 RUN pip install pyinstaller
-CMD ["pyinstaller --onefile main.py"]
+CMD pyinstaller --onefile main.py
