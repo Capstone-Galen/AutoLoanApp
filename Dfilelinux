@@ -2,6 +2,6 @@ FROM cdrx/pyinstaller-linux:python3
 COPY . /Main.py
 WORKDIR /LoanApp
 RUN pip install pyinstaller
-CMD pyinstaller main.py
-CMD cd /main/
-CMD cp /main/main /~/LoanApp/main
+CMD ["pyinstaller", "main.py"]
+CMD cd /Main.py/dist/main/
+CMD ./main
