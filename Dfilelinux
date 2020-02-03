@@ -1,5 +1,3 @@
-FROM 
-
 FROM cdrx/pyinstaller-linux:python3
 COPY . /Main.py
 WORKDIR /Main.py
