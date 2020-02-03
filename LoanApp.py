@@ -1,6 +1,7 @@
 #print("Python code starting.")
 #print("This application developed in Python by Galen Schatzman.")
 from tkinter import *
+import _tkinter
 from tkinter import messagebox
 from decimal import *
 
