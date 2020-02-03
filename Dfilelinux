@@ -3,5 +3,3 @@ COPY . /Main.py
 WORKDIR /Main.py
 RUN pip install pyinstaller
 CMD ["pyinstaller", "main.py"]
-RUN cd /Main.py/dist/
-RUN ./main
