@@ -6,4 +6,5 @@ RUN chmod 777 /LoanApp.py
 RUN pip install pyinstaller
 RUN cd ..
 RUN pwd
-CMD pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py
+RUN pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py
+CMD python, LoanApp.py
