@@ -1,0 +1,10 @@
+FROM ubuntu:latest AS Build
+
+FROM cdrx/pyinstaller-linux:python3
+COPY . /LoanApp.py /LoanApp.py/
+WORKDIR /LoanApp.py/
+RUN pip install pyinstaller /
+    && pip install python3.6 /
+    && pip install python3.6-tk /
+    && cd LoanApp.py/
+CMD ["pyinstaller --onefile --windowed LoanApp.py"]
