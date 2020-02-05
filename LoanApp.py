@@ -55,7 +55,7 @@ def calculate(entryLA, entryIR, entryLT):
         monthCalc = str(monthCalc)
         entryLA = str(entryLA)
 
-        print(tc + " " + ic + " " + m)
+        #print(tc + " " + ic + " " + m)
 
         labelar['text'] = "Amount Requested: $" + entryLA
         labeltc['text'] = "Total Cost of Loan: $" + tc
