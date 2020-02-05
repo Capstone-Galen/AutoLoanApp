@@ -1,5 +1,4 @@
-FROM cdrx/pyinstaller-linux:python3
-COPY . /LoanApp.py 
-WORKDIR /LoanApp.py/
+FROM python:3
+ADD LoanApp.py/
 RUN pip install pyinstaller
-CMD ["pyinstaller --onefile --windowed LoanApp.py", "./LoanApp.py"]
+CMD ["python", "./LoanApp.py"]
