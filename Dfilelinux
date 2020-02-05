@@ -1,6 +1,5 @@
 FROM python:3
 ADD . /LoanApp.py /alc/src/
-RUN cd //alc/src/ \
-    && ls \
-    && pwd 
+WORKDIR /alc/src
+RUN pwd
 CMD ["ls"]
