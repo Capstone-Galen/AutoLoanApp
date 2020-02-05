@@ -1,4 +1,4 @@
 FROM python:3
 ADD . /LoanApp.py /LoanApp.py/src/
 RUN pip install pyinstaller
-CMD ["python", "./LoanApp.py"]
+CMD python ./LoanApp.py
