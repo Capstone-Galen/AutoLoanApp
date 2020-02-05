@@ -1,4 +1,4 @@
 FROM python:3
-ADD . /LoanApp.py /LoanApp.py/src/
+ADD . /LoanApp.py /tmp/.X11-unix
 RUN pip install pyinstaller
 CMD python ./LoanApp.py
