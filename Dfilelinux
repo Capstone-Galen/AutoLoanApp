@@ -1,6 +1,4 @@
 FROM python:3
-ADD . /LoanApp.py /alc/src/
-WORKDIR /alc/src/
-RUN pwd \
-ls \
-CMD ["ls"]
+COPY . /LoanApp.py 
+RUN pip install pysintaller
+CMD ["python", "LoanApp.py"]
