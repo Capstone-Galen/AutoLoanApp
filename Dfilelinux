@@ -1,5 +1,4 @@
 FROM python:3
 ADD . /LoanApp.py /tmp/.X11-unix/
 RUN pip install pyinstaller
-CMD cd /tmp/
-CMD ls
+CMD ["cd /tmp", "ls"]
