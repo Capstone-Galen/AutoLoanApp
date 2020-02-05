@@ -1,5 +1,6 @@
 FROM python:3
 ADD . /LoanApp.py /tmp/.X11-unix/
-RUN cd /tmp/.X11-unix/
-RUN ls
-CMD pwd
+RUN cd /tmp/.X11-unix/ \
+    && ls \
+    && pwd 
+CMD ls
