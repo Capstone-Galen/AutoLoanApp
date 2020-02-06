@@ -1,4 +1,4 @@
-FROM python:3
+FROM python
 ADD . /LoanApp/src
 WORKDIR /LoanApp/src
 RUN pip install pyinstaller 
