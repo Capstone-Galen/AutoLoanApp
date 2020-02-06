@@ -1,6 +1,4 @@
 FROM python:3
 ADD . /LoanApp
 WORKDIR /LoanApp
-RUN pip install pyinstaller
-RUN ls /LoanApp
 CMD ["python3", "main.py"]
