@@ -16,7 +16,7 @@ h = dc.Decimal(h)
 i = input("Enter the term of your loan in years: ")
 i = dc.Decimal(i)
 
-print("Calculating...")
+print("Calculating your loan inquiry")
 print("")
 interestRate = (h / 100)
 interestRate = dc.Decimal(interestRate)
