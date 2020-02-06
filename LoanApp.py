@@ -1,6 +1,6 @@
 #print("Python code starting.")
 #print("This application developed in Python by Galen Schatzman.")
-import _tkinter
+#import _tkinter
 import tkinter
 #from tkinter import *
 import tkinter as tk
