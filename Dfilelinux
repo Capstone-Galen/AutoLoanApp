@@ -1,4 +1,6 @@
 FROM python:3
-COPY . /LoanApp.py 
+ADD . /LoanApp
+WORKDIR /LoanApp
 RUN pip install pyinstaller
-CMD ["python", "LoanApp.py"]
+RUN ls /LoanApp
+CMD ["python3", "LoanApp.py"]
