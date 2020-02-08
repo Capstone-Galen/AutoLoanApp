@@ -1,4 +1,4 @@
-FROM mrc.microsoft.com/windows:1903
+FROM mcr.microsoft.com/windows:1903
 
 FROM python
 COPY LoanApp.py c:/Capstone
