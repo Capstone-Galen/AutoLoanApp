@@ -1,10 +1,11 @@
-FROM ubuntu:latest AS Build
+FROM mrc.microsoft.com/windows:1903
 
-FROM cdrx/pyinstaller-linux:python3
-COPY . /LoanApp.py /LoanApp.py/
-WORKDIR /LoanApp.py/
-RUN pip install pyinstaller /
-    && pip install python3.6 /
-    && pip install python3.6-tk /
-    && cd LoanApp.py/
-CMD ["pyinstaller --onefile --windowed LoanApp.py"]
+FROM python
+COPY LoanApp.py c:/Capstone
+WORKDIR c:/Capstone
+RUN pip install python \ 
+    pip install pyinstaller \
+    cd /src \
+    pyinstaller --onefile --windowed LoanApp.py \
+    cd /dist
+CMD ["start LoanApp.exe"]
