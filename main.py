@@ -1,4 +1,4 @@
-#import decimal as dc
+import decimal as dc
 # Auto Loan Calculator console representation
 # Created by Galen Schatzman 12/26/2019
 #Now added to repository at https://github.com/SchatzmanGPS/ConsoleLoanApp.git
