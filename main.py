@@ -41,6 +41,7 @@ ic = str(ic)
 m = str(m)
 monthCalc = str(monthCalc)
 
+print("")
 print("The total cost of your loan is: $" + tc)
 print("")
 print("The cost of interest at the time of the loan is: $"+ ic)
