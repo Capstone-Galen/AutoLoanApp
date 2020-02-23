@@ -1,0 +1,11 @@
+FROM mcr.microsoft.com/windows:1903
+
+FROM python
+COPY LoanApp.py c:/Capstone
+WORKDIR c:/Capstone
+RUN pip install python \ 
+    pip install pyinstaller \
+    cd /src \
+    pyinstaller --onefile --windowed LoanApp.py \
+    cd /dist
+CMD ["start LoanApp.exe"]

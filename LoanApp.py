@@ -1,14 +1,18 @@
 #print("Python code starting.")
 #print("This application developed in Python by Galen Schatzman.")
-from tkinter import *
+#import _tkinter
+import tkinter
+#from tkinter import *
+import tkinter as tk
 from tkinter import messagebox
-from decimal import *
+import decimal as dc
+#from decimal import *
 
 
 HEIGHT=350
 WIDTH=360
 
-root = Tk()
+root = tk.Tk()
 root.title("Auto Loan Calculator")
 #root.iconbitmap = (r'.\icons8carbadge.ico')
 #Car Badge icon by Icons8
@@ -19,17 +23,17 @@ def calculate(entryLA, entryIR, entryLT):
 
     try:
     #Convert String Value to Decimal Below
-        entryLA = Decimal(entryLA)
-        entryIR = Decimal(entryIR)
-        entryLT = Decimal(entryLT)
+        entryLA = dc.Decimal(entryLA)
+        entryIR = dc.Decimal(entryIR)
+        entryLT = dc.Decimal(entryLT)
     
 
         interestRate = (entryIR / 100)
-        interestRate = Decimal(interestRate)
+        interestRate = dc.Decimal(interestRate)
         monthCalc = (entryLT * 12)
-        monthCalc = Decimal(monthCalc)
+        monthCalc = dc.Decimal(monthCalc)
         interestXComp = (interestRate / 1)
-        interestXComp = Decimal(interestXComp)
+        interestXComp = dc.Decimal(interestXComp)
         a = (1 + interestXComp)
         b = (1 * entryLT)
         #POW = pow(a,b) Line 23 is also a exponential expression
@@ -51,7 +55,7 @@ def calculate(entryLA, entryIR, entryLT):
         monthCalc = str(monthCalc)
         entryLA = str(entryLA)
 
-        print(tc + " " + ic + " " + m)
+        #print(tc + " " + ic + " " + m)
 
         labelar['text'] = "Amount Requested: $" + entryLA
         labeltc['text'] = "Total Cost of Loan: $" + tc
@@ -59,52 +63,52 @@ def calculate(entryLA, entryIR, entryLT):
         labelmc['text'] = "Minimum Monthly Payment: $" + m
         labelm['text'] = "You will pay this loan off in " + monthCalc + " months"
     except:
-        messagebox.showwarning("Auto Loan Calculator", "Please Enter Numbers and Number Formats only.")
+        tk.messagebox.showwarning("Auto Loan Calculator", "Please Enter Numbers and Number Formats only.")
         
 
 
 
-canvas = Canvas(root, height=HEIGHT, width=WIDTH)
+canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
 
-frame = Frame(root, bg="#B2ACAC")
+frame = tk.Frame(root, bg="#B2ACAC")
 frame.place(relx=0.01, rely=0.01, relwidth=0.98, relheight=0.98)
 
-labelLA = Label(frame, text="Enter Loan Amount Below", bg="#B2ACAC")
+labelLA = tk.Label(frame, text="Enter Loan Amount Below", bg="#B2ACAC")
 labelLA.place(x = 110, y = 5)
 
-entryLA = Entry(frame, justify='center')
+entryLA = tk.Entry(frame, justify='center')
 entryLA.place(x = 120, y = 30)
 
-labelIR = Label(frame, text="Enter Interest Rate Below (i.e. 4.49)", bg="#B2ACAC")
+labelIR = tk.Label(frame, text="Enter Interest Rate Below (i.e. 4.49)", bg="#B2ACAC")
 labelIR.place(x = 88, y = 55)
 
-entryIR = Entry(frame, justify='center')
+entryIR = tk.Entry(frame, justify='center')
 entryIR.place(x = 120, y = 80)
 
-labelLT = Label(frame, text="Enter Term of Loan in Years Below", bg="#B2ACAC")
+labelLT = tk.Label(frame, text="Enter Term of Loan in Years Below", bg="#B2ACAC")
 labelLT.place(x = 88, y = 105)
 
-entryLT = Entry(frame, justify='center')
+entryLT = tk.Entry(frame, justify='center')
 entryLT.place(x = 120, y = 130)
 
 #calcButton = Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
-calcButton = Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+calcButton = tk.Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
 calcButton.place(x = 138, y = 155)
 
-labelar = Label(frame, bg="#B2ACAC")
+labelar = tk.Label(frame, bg="#B2ACAC")
 labelar.place(x = 88, y = 180)
 
-labeltc = Label(frame, bg="#B2ACAC")
+labeltc = tk.Label(frame, bg="#B2ACAC")
 labeltc.place(x = 88, y = 205)
 
-labelic = Label(frame, bg="#B2ACAC")
+labelic = tk.Label(frame, bg="#B2ACAC")
 labelic.place(x = 88, y = 230)
 
-labelmc = Label(frame, bg="#B2ACAC")
+labelmc = tk.Label(frame, bg="#B2ACAC")
 labelmc.place(x = 88, y = 255)
 
-labelm = Label(frame, bg="#B2ACAC")
+labelm = tk.Label(frame, bg="#B2ACAC")
 labelm.place(x = 88, y = 280)
 
 
