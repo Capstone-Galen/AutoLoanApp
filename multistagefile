@@ -1,9 +1,11 @@
 FROM mcr.microsoft.com/nanoserver
 
-FROM python
 RUN mkdir C:\Capstone
 WORKDIR C:\\Capstone
 COPY LoanApp.py C:\\Capstone
+RUN @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
+
+RUN choco install -y python3
 RUN pip install pyinstaller
 RUN pyinstaller --onefile --windowed LoanApp.py
 CMD ["python LoanApp.py"]
