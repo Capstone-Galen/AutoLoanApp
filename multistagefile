@@ -3,6 +3,8 @@ RUN mkdir C:\Capstone
 WORKDIR C:\\Capstone
 COPY LoanApp.py C:\\Capstone
 FROM python
+RUN SET "PATH=%PATH%;%ALLUSERSPROFILE%\Python38"
+RUN python install pip
 RUN pip install pyinstaller
 RUN pyinstaller --onefile --windowed LoanApp.py
 WORKDIR C:\\Capstone\\dist
