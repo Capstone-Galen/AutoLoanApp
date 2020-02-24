@@ -1,7 +1,8 @@
-FROM python
+FROM mcr.microsoft.com/windows/nanoserver
 RUN mkdir C:\Capstone
 WORKDIR C:\\Capstone
 COPY LoanApp.py C:\\Capstone
+FROM python
 RUN pip install pyinstaller
 RUN pyinstaller --onefile --windowed LoanApp.py
 WORKDIR C:\\Capstone\\dist
