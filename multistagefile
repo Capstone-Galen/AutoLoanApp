@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/windows/nanoserver:10.0.14393
+FROM microsoft/nanoserver
 RUN mkdir C:\Capstone
 WORKDIR C:\\Capstone
 COPY LoanApp.py C:\\Capstone
