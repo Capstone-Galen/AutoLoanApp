@@ -1,11 +1,10 @@
 FROM mcr.microsoft.com/nanoserver
 RUN mkdir C:\\Capstone
 COPY . C:\\Capstone
-WORKDIR C:\\Capstone\\ \
-
 FROM python
 RUN python -m pip install --upgrade pip
 RUN pip install pyinstaller
+WORKDIR C:\\Capstone
 RUN pyinstaller --onefile --windowed LoanApp.py
 RUN cd dist
 CMD ["start LoanApp.exe"]
