@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/nanoserver
 RUN mkdir C:\\Capstone
-COPY LoanApp.py C:\\Capstone
+COPY LoanApp.py C:\Capstone
 WORKDIR C:\\Capstone
 FROM python
 RUN python -m pip install --upgrade pip
