@@ -1,10 +1,11 @@
-FROM mcr.microsoft.com/nanoserver
+FROM python
 RUN mkdir C:\\Capstone
 COPY LoanApp.py C:\\Capstone
 COPY icons8carbadge.ico C:\\Capstone
-FROM python
 RUN python -m pip install --upgrade pip
 RUN pip install pyinstaller
+FROM mcr.microsoft.com/nanoserver
+WORKDIR C:\\Capstone
 RUN pyinstaller --onefile --windowed --icon=icons8carbadge.ico LoanApp.py
 RUN cd dist
 CMD ["start LoanApp.exe"]
