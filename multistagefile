@@ -2,5 +2,4 @@ FROM python
 RUN mkdir C:\\Capstone
 WORKDIR C:\\Capstone
 COPY main.py C:\\Capstone
-RUN python -m pip install --upgrade pip
 CMD ["python main.py"]
