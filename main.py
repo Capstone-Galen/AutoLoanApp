@@ -29,6 +29,7 @@ a = (1 + interestXComp)
 b = (1 * i)
 #POW = pow(a,b) Line 23 is also a exponential expression
 POW = (a**b)
+requested = g
 totalCost = (g * POW)
 tc = round(totalCost, 2)
 interestCost = (totalCost - g)
@@ -36,7 +37,7 @@ ic = round(interestCost, 2)
 monthly = (totalCost / monthCalc)
 m = round(monthly, 2)
 #Convert above values to strings below
-gc = str(g)
+gc = str(requested)
 tc = str(tc)
 ic = str(ic)
 m = str(m)
