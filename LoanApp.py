@@ -92,8 +92,8 @@ labelLT.place(x = 88, y = 105)
 entryLT = tk.Entry(frame, justify='center')
 entryLT.place(x = 120, y = 130)
 
-calcButton = tk.Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
-#calcButton = tk.Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+#calcButton = tk.Button(frame, text="Calculate Loan", bg='green', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
+calcButton = tk.Button(frame, text="Calculate Loan", bg='orange', fg='white', command=lambda: calculate(entryLA.get(), entryIR.get(), entryLT.get()))
 calcButton.place(x = 138, y = 155)
 
 labelar = tk.Label(frame, bg="#B2ACAC")
